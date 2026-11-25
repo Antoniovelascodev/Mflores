@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="es" data-size="0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Miraflores Golf · Maqueta de demostración</title>
+  <meta name="description" content="El club de golf más social de la Costa del Sol. Reserve su salida en el campo de Miraflores Golf. Maqueta de demostración."
+        data-i18n-attr="content:meta_desc">
+  <meta name="theme-color" content="#0b2e22">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    document.documentElement.classList.add('js');
+    // Menú compacto desde el primer pintado en pantallas pequeñas (script.js lo reajusta después)
+    if (window.innerWidth <= 1180) document.documentElement.classList.add('nav-compact');
+  </script>
+  <script src="translations.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ============ Iconos y banderas (sprite SVG) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Iconos -->
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 22V3M5 3l13 4.5L5 12"/><circle cx="12" cy="20.5" r="1.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16h14M3 16v-4l2-5h9l3 5h4v4M7 7v5M3 12h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-tag" viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.5"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></symbol>
+
+    <!-- Banderas (30 x 20) -->
+    <symbol id="flag-es" viewBox="0 0 30 20"><rect width="30" height="20" fill="#AA151B"/><rect y="5" width="30" height="10" fill="#F1BF00"/><rect x="7.5" y="7.8" width="3" height="4.4" rx=".8" fill="#AD1519"/></symbol>
+    <symbol id="flag-gb" viewBox="0 0 30 20"><rect width="30" height="20" fill="#012169"/><path d="M0 0 30 20M30 0 0 20" stroke="#fff" stroke-width="4"/><path d="M0 0 30 20M30 0 0 20" stroke="#C8102E" stroke-width="1.6"/><path d="M15 0v20M0 10h30" stroke="#fff" stroke-width="6.5"/><path d="M15 0v20M0 10h30" stroke="#C8102E" stroke-width="3.8"/></symbol>
+    <symbol id="flag-de" viewBox="0 0 30 20"><rect width="30" height="20" fill="#FFCE00"/><rect width="30" height="13.4" fill="#DD0000"/><rect width="30" height="6.7" fill="#000"/></symbol>
+    <symbol id="flag-no" viewBox="0 0 30 20"><rect width="30" height="20" fill="#BA0C2F"/><path d="M10 0v20M0 10h30" stroke="#fff" stroke-width="5"/><path d="M10 0v20M0 10h30" stroke="#00205B" stroke-width="2.6"/></symbol>
+    <symbol id="flag-fi" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><path d="M10 0v20M0 10h30" stroke="#003580" stroke-width="4.4"/></symbol>
+    <symbol id="flag-se" viewBox="0 0 30 20"><rect width="30" height="20" fill="#006AA7"/><path d="M11 0v20M0 10h30" stroke="#FECC00" stroke-width="4"/></symbol>
+    <symbol id="flag-fr" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="10" height="20" fill="#0055A4"/><rect x="20" width="10" height="20" fill="#EF4135"/></symbol>
+    <symbol id="flag-it" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><rect width="10" height="20" fill="#009246"/><rect x="20" width="10" height="20" fill="#CE2B37"/></symbol>
+    <symbol id="flag-jp" viewBox="0 0 30 20"><rect width="30" height="20" fill="#fff"/><circle cx="15" cy="10" r="6" fill="#BC002D"/></symbol>
+    <symbol id="flag-cn" viewBox="0 0 30 20">
+      <rect width="30" height="20" fill="#DE2910"/>
+      <g fill="#FFDE00">
+        <polygon points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309" transform="translate(5 5) scale(3)"/>
+        <polygon points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309" transform="translate(10 2) rotate(23) scale(1)"/>
+        <polygon points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309" transform="translate(12 4) rotate(45) scale(1)"/>
+        <polygon points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309" transform="translate(12 7) rotate(70) scale(1)"/>
+        <polygon points="0,-1 .2245,-.309 .951,-.309 .363,.118 .588,.809 0,.382 -.588,.809 -.363,.118 -.951,-.309 -.2245,-.309" transform="translate(10 9) rotate(50) scale(1)"/>
+      </g>
+    </symbol>
+    <symbol id="flag-ru" viewBox="0 0 30 20"><rect width="30" height="20" fill="#D52B1E"/><rect width="30" height="13.4" fill="#0039A6"/><rect width="30" height="6.7" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#contenido" data-i18n="skip">Saltar al contenido</a>
+
+<!-- ============ Barra superior ============ -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <p class="topbar__mock"><strong data-i18n="mock">Maqueta de demostración · Sitio no oficial</strong></p>
+    <ul class="topbar__info">
+      <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+34952931960">+34 952 931 960</a></li>
+      <li class="hide-sm"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg><span data-i18n="open365">Abierto los 365 días del año</span></li>
+    </ul>
+    <div class="tools">
+      <div class="tools__group" role="group" aria-label="Tamaño del texto" data-i18n-attr="aria-label:size_group">
+        <button type="button" class="tool" data-size-set="0" aria-label="Texto normal" data-i18n-attr="aria-label:size_0" aria-pressed="true">A</button>
+        <button type="button" class="tool tool--md" data-size-set="1" aria-label="Texto grande" data-i18n-attr="aria-label:size_1" aria-pressed="false">A</button>
+        <button type="button" class="tool tool--lg" data-size-set="2" aria-label="Texto muy grande" data-i18n-attr="aria-label:size_2" aria-pressed="false">A</button>
+      </div>
+
+      <!-- Selector de idioma con banderas -->
+      <div class="lang" id="lang">
+        <button type="button" class="lang__btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-controls="langList"
+                aria-label="Idioma" data-i18n-attr="aria-label:lang_label">
+          <svg class="flag" aria-hidden="true"><use href="#flag-es" id="langFlag"/></svg>
+          <span class="lang__cur" id="langCur" lang="es">Español</span>
+          <svg class="icon lang__chev" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </button>
+        <ul class="lang__list" id="langList" role="listbox" tabindex="-1" aria-label="Idioma" data-i18n-attr="aria-label:lang_label" hidden></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Cabecera ============ -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a class="brand" href="#inicio" aria-label="Miraflores Golf Club, inicio" data-i18n-attr="aria-label:brand_aria">
+      <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M17 36V11l15 6-15 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+        <ellipse cx="24" cy="37" rx="10" ry="2.6" fill="currentColor" opacity=".25"/>
+        <circle cx="29" cy="35" r="2.4" fill="currentColor"/>
+      </svg>
+      <span class="brand__text"><span class="brand__name">Miraflores</span><span class="brand__sub">Golf Club · Mijas</span></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Principal" data-i18n-attr="aria-label:nav_aria">
+      <ul class="nav__list">
+        <li><a href="#campo" data-i18n="nav_course">El campo</a></li>
+        <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+        <li><a href="#academia" data-i18n="nav_academy">Academia</a></li>
+        <li><a href="#noticias" data-i18n="nav_news">Noticias</a></li>
+        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+      </ul>
+      <a class="btn btn--gold nav__cta" href="#reservas"><span data-i18n="btn_book_course">Reservar campo</span></a>
+    </nav>
+
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">
+      <svg class="icon icon--lg" data-open aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon icon--lg" data-close aria-hidden="true" hidden><use href="#i-x"/></svg>
+      <span data-i18n="menu">Menú</span>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ Portada ============ -->
+<section class="hero" id="inicio" aria-labelledby="heroTitle">
+  <img class="hero__img" src="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1920&q=75"
+       alt="Vista aérea de un campo de golf con búnkeres y calles verdes" data-i18n-attr="alt:alt_aerial" fetchpriority="high">
+  <div class="hero__content container">
+    <p class="eyebrow eyebrow--light" data-i18n="hero_eyebrow">Costa del Sol · Desde 1990</p>
+    <h1 id="heroTitle" data-i18n="hero_title">El club de golf más social de la Costa del Sol (demo)</h1>
+    <p class="lead" data-i18n="hero_lead">18 hoyos con vistas panorámicas, en Mijas Costa. Usted venga a jugar, nosotros nos ocupamos del resto.</p>
+    <div class="hero__cta">
+      <a class="btn btn--gold btn--lg" href="#reservas"><span data-i18n="btn_book_course">Reservar campo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn btn--ghost btn--lg" href="#campo" data-i18n="hero_discover">Descubrir el campo</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Introducción ============ -->
+<section class="section intro" aria-labelledby="introTitle">
+  <div class="container">
+    <header class="intro__head reveal">
+      <div class="intro__title">
+        <p class="eyebrow" data-i18n="intro_eyebrow">Bienvenido</p>
+        <h2 id="introTitle" data-i18n="intro_title">Un club donde todos se sienten como en casa</h2>
+      </div>
+      <div class="intro__copy">
+        <p data-i18n="intro_p1">Miraflores Golf se encuentra en Riviera del Sol, en Mijas, a pocos minutos de La Cala. Nos distingue el ambiente cercano, un campo cuidado al detalle y un equipo que trata a cada visitante como a un miembro de la familia.</p>
+        <p data-i18n="intro_p2">Tanto si viene a jugar una vuelta con amigos como a descubrir el golf por primera vez, aquí encontrará un campo acogedor y un trato cercano.</p>
+      </div>
+    </header>
+
+    <ol class="intro__items reveal">
+      <li>
+        <span class="intro__num" aria-hidden="true">01</span>
+        <h3 data-i18n="item1_t">Campo de 18 hoyos</h3>
+        <p data-i18n="item1_d">Calles anchas, greenes elevados y vistas panorámicas a la costa. Un recorrido agradable para todos los niveles.</p>
+      </li>
+      <li>
+        <span class="intro__num" aria-hidden="true">02</span>
+        <h3 data-i18n="item2_t">El club más social</h3>
+        <p data-i18n="item2_d">Competiciones y eventos cada semana, abiertos a socios e invitados, en un ambiente cálido y cercano.</p>
+      </li>
+      <li>
+        <span class="intro__num" aria-hidden="true">03</span>
+        <h3 data-i18n="item3_t">Abierto los 365 días</h3>
+        <p data-i18n="item3_d">Según las condiciones meteorológicas, el campo le espera todos los días del año.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ Servicios · Carrusel ============ -->
+<section class="section section--cream services" id="servicios" aria-labelledby="servTitle">
+  <div class="container">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="eyebrow" data-i18n="serv_eyebrow">Lo que ofrecemos</p>
+        <h2 id="servTitle" data-i18n="serv_title">Nuestros servicios</h2>
+        <p class="section__sub" data-i18n="serv_sub">Deslice para descubrir todo lo que Miraflores tiene para usted.</p>
+      </div>
+      <div class="carousel__arrows">
+        <button type="button" class="round round--dark" id="servPrev"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span class="sr-only" data-i18n="serv_prev">Servicios anteriores</span></button>
+        <button type="button" class="round round--dark" id="servNext"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span class="sr-only" data-i18n="serv_next">Servicios siguientes</span></button>
+      </div>
+    </header>
+  </div>
+
+  <div class="carousel" aria-roledescription="carrusel" aria-label="Servicios del club" data-i18n-attr="aria-label:serv_aria">
+    <ul class="carousel__track" id="servTrack" tabindex="0">
+      <li class="card">
+        <div class="card__media"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=75" alt="Jugador de golf en el tee de salida" data-i18n-attr="alt:alt_tee" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-flag"/></svg></span>
+          <h3 data-i18n="svc_course_t">Reserva de campo</h3>
+          <p data-i18n="svc_course_d">Reserve su salida en nuestro campo de 18 hoyos, par 71, para jugadores individuales, parejas y grupos.</p>
+          <a class="btn btn--primary btn--block card__cta" href="#reservas"><span data-i18n="btn_book">Reservar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__media"><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=800&q=75" alt="Hierros de golf en una bolsa" data-i18n-attr="alt:alt_clubs" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg></span>
+          <h3 data-i18n="svc_clubs_t">Alquiler de palos</h3>
+          <p data-i18n="svc_clubs_d">Juegue sin cargar con su equipo: palos de calidad para todos los niveles, añadidos a su reserva del campo.</p>
+          <a class="btn btn--primary btn--block card__cta" href="#reservas"><span data-i18n="btn_book">Reservar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__media"><img src="https://images.unsplash.com/photo-1602991174407-a015b35a7b00?auto=format&fit=crop&w=800&q=75" alt="Buggies de golf aparcados junto a la calle" data-i18n-attr="alt:alt_buggy" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-car"/></svg></span>
+          <h3 data-i18n="svc_buggy_t">Buggy</h3>
+          <p data-i18n="svc_buggy_d">Recorra el campo con total comodidad y disfrute de las vistas sin cansarse.</p>
+          <a class="btn btn--primary btn--block card__cta" href="#reservas"><span data-i18n="btn_book">Reservar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </li>
+      <li class="card">
+        <div class="card__media"><img src="https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=800&q=75" alt="Golfista practicando un golpe en la calle" data-i18n-attr="alt:alt_range" loading="lazy" width="800" height="600"></div>
+        <div class="card__body">
+          <span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></span>
+          <h3 data-i18n="svc_range_t">Campo de prácticas</h3>
+          <p data-i18n="svc_range_d">Caliente antes de salir o perfeccione su swing en nuestro campo de prácticas de 12 calles.</p>
+          <a class="btn btn--primary btn--block card__cta" href="#reservas"><span data-i18n="btn_book">Reservar</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </li>
+      <li class="card card--soon">
+        <div class="card__media"><img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=800&q=75" alt="Bola de golf junto al hoyo sobre el green" data-i18n-attr="alt:alt_ball" loading="lazy" width="800" height="600"><span class="card__ribbon" data-i18n="soon">Próximamente</span></div>
+        <div class="card__body">
+          <span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg></span>
+          <h3 data-i18n="svc_offers_t">Ofertas especiales</h3>
+          <p data-i18n="svc_offers_d">Ahora mismo no hay ninguna oferta activa. Publicaremos aquí las próximas promociones del club.</p>
+          <p class="card__status"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><span data-i18n="soon_status">Sin ofertas por el momento</span></p>
+        </div>
+      </li>
+    </ul>
+    <div class="container"><div class="carousel__progress" aria-hidden="true"><span id="servBar"></span></div></div>
+  </div>
+</section>
+
+<!-- ============ El campo ============ -->
+<section class="section section--dark course" id="campo" aria-labelledby="courseTitle">
+  <div class="container course__grid">
+    <div class="course__media reveal">
+      <img class="course__img course__img--a" src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1000&q=75" alt="Campo de golf bajo un cielo nublado" data-i18n-attr="alt:alt_links" loading="lazy" width="1000" height="700">
+      <img class="course__img course__img--b" src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&w=600&q=75" alt="Hierro golpeando una bola sobre el césped" data-i18n-attr="alt:alt_iron" loading="lazy" width="600" height="600">
+    </div>
+    <div class="course__text reveal">
+      <p class="eyebrow eyebrow--light" data-i18n="course_eyebrow">El campo de golf</p>
+      <h2 id="courseTitle" data-i18n="course_title">Dieciocho hoyos para disfrutar a su ritmo</h2>
+      <p data-i18n="course_p">Diseñado por Falco Nardi e inaugurado en 1990, nuestro campo es jugable para todos los niveles gracias a sus calles anchas y sus grandes greenes elevados. Los obstáculos de agua en varios hoyos y las vistas panorámicas hacen memorable cada vuelta.</p>
+      <dl class="stats">
+        <div><dt data-i18n="stat_holes">Hoyos</dt><dd><span data-count="18">18</span></dd></div>
+        <div><dt data-i18n="stat_par">Par</dt><dd><span data-count="71">71</span></dd></div>
+        <div><dt data-i18n="stat_m">Metros (caballeros)</dt><dd><span data-count="5148">5.148</span></dd></div>
+        <div><dt data-i18n="stat_year">Inaugurado en</dt><dd><span data-count="1990" data-plain>1990</span></dd></div>
+      </dl>
+      <ul class="ticks">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="tick1">Calles anchas, amables con cualquier hándicap</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="tick2">Greenes elevados con vistas a la costa</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="tick3">Competiciones cada semana para socios e invitados</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn--gold btn--lg" href="#reservas"><span data-i18n="btn_book_course">Reservar campo</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost btn--lg" href="#galeria" data-i18n="btn_gallery">Ver galería</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Academia ============ -->
+<section class="section academy" id="academia" aria-labelledby="acadTitle">
+  <div class="container academy__grid">
+    <div class="academy__text reveal">
+      <p class="eyebrow" data-i18n="acad_eyebrow">Academia de Golf</p>
+      <h2 id="acadTitle" data-i18n="acad_title">Aprenda, practique y disfrute del juego</h2>
+      <p data-i18n="acad_p">Nuestro campo de prácticas cuenta con 12 calles y se encuentra en la Miraflores Sports Village, junto a la tienda de golf. Dos profesionales, Thomas y Steve, ofrecen clases adaptadas a su ritmo y a sus objetivos.</p>
+      <ul class="pros">
+        <li>
+          <span class="avatar" aria-hidden="true">T</span>
+          <div><h3>Thomas</h3><p data-i18n="thomas_d">Profesional · Clases individuales y en grupo</p></div>
+        </li>
+        <li>
+          <span class="avatar" aria-hidden="true">S</span>
+          <div><h3>Steve</h3><p data-i18n="steve_d">Profesional · Swing, juego corto y juego en campo</p></div>
+        </li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn--primary btn--lg" href="tel:+34952936716"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="btn_call_academy">Llamar a la Academia</span></a>
+      </div>
+    </div>
+    <div class="academy__media reveal">
+      <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?auto=format&fit=crop&w=1000&q=75" alt="Golfista en pleno swing durante una clase" data-i18n-attr="alt:alt_swing" loading="lazy" width="1000" height="1100">
+      <div class="academy__badge"><strong>12</strong><span data-i18n="acad_badge">calles en el campo de prácticas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Reservas (plataforma pendiente de implementar) ============ -->
+<section class="section section--green booking" id="reservas" aria-labelledby="bookTitle">
+  <div class="container booking__grid">
+    <div class="booking__text reveal">
+      <p class="eyebrow eyebrow--light" data-i18n="book_eyebrow">Reserva online</p>
+      <h2 id="bookTitle" data-i18n="book_title">Reserve su salida de golf</h2>
+      <p class="lead" data-i18n="book_sub">Estamos preparando nuestra plataforma de reservas online. Muy pronto podrá reservar aquí el campo, con sus palos y su buggy.</p>
+      <ul class="ticks">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="svc_course_t">Reserva de campo</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="svc_clubs_t">Alquiler de palos</span></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="svc_buggy_t">Buggy</span></li>
+      </ul>
+      <div class="actions">
+        <a class="btn btn--gold btn--lg" href="tel:+34952931960"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="btn_call_club">Reservar por teléfono</span></a>
+        <a class="btn btn--ghost btn--lg" href="#contacto" data-i18n="btn_write">Escribirnos</a>
+      </div>
+      <p class="booking__phone"><span data-i18n="book_phone">Llámenos al</span> <a href="tel:+34952931960">+34 952 931 960</a></p>
+    </div>
+
+    <!-- Hueco reservado para la futura plataforma de reservas -->
+    <div class="platform reveal" id="booking-platform" data-platform="pending" role="region" aria-labelledby="platTitle">
+      <span class="platform__badge" data-i18n="soon">Próximamente</span>
+      <h3 id="platTitle" data-i18n="plat_title">Plataforma de reservas</h3>
+      <p data-i18n="plat_text">Aquí se integrará el sistema de reservas del campo de golf. Mientras tanto, estaremos encantados de atenderle por teléfono.</p>
+      <div class="platform__preview" aria-hidden="true">
+        <div class="platform__days"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="platform__slots"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="platform__bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Noticias ============ -->
+<section class="section news" id="noticias" aria-labelledby="newsTitle">
+  <div class="container">
+    <header class="section__head section__head--row reveal">
+      <div>
+        <p class="eyebrow" data-i18n="news_eyebrow">Últimas noticias y eventos</p>
+        <h2 id="newsTitle" data-i18n="news_title">La vida en el club</h2>
+      </div>
+      <a class="link-arrow" href="https://www.instagram.com/mirafloresgolfofficial/" target="_blank" rel="noopener"><span data-i18n="news_ig">Síganos en Instagram</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </header>
+    <div class="news__grid">
+      <article class="news-card news-card--lead reveal">
+        <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5b8?auto=format&fit=crop&w=1000&q=75" alt="Socios del club brindando juntos" data-i18n-attr="alt:alt_toast" loading="lazy" width="1000" height="700">
+        <div class="news-card__body">
+          <span class="tag" data-i18n="tag_club">Novedades del club</span>
+          <h3 data-i18n="n1_t">Nuevos Capitanes para la temporada 2026/2027</h3>
+          <p data-i18n="n1_d">Damos la bienvenida a nuestros nuevos Capitanes, con una temporada llena de competiciones, amistad y buen golf por delante.</p>
+          <a class="link-arrow" href="#contacto"><span data-i18n="read_more">Leer más</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=700&q=75" alt="Vista aérea del campo" data-i18n-attr="alt:alt_aerial" loading="lazy" width="700" height="500">
+        <div class="news-card__body">
+          <span class="tag" data-i18n="tag_course">El campo</span>
+          <h3 data-i18n="n2_t">La opinión de un invitado sobre el campo</h3>
+          <p data-i18n="n2_d">Descubra qué dicen los visitantes tras jugar en Miraflores.</p>
+          <a class="link-arrow" href="#campo"><span data-i18n="read_more">Leer más</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+      <article class="news-card reveal">
+        <img src="https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=700&q=75" alt="Golfista practicando en el campo de prácticas" data-i18n-attr="alt:alt_range" loading="lazy" width="700" height="500">
+        <div class="news-card__body">
+          <span class="tag" data-i18n="tag_academy">Academia</span>
+          <h3 data-i18n="n3_t">Nuevo profesional en el campo de prácticas</h3>
+          <p data-i18n="n3_d">Más horarios de clase y más formas de mejorar su juego.</p>
+          <a class="link-arrow" href="#academia"><span data-i18n="read_more">Leer más</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Galería ============ -->
+<section class="section section--cream gallery" id="galeria" aria-labelledby="galTitle">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow" data-i18n="gal_eyebrow">Galería de fotos</p>
+      <h2 id="galTitle" data-i18n="gal_title">Momentos en Miraflores</h2>
+      <p class="section__sub" data-i18n="gal_sub">Pulse cualquier foto para verla más grande.</p>
+    </header>
+    <ul class="gallery__grid">
+      <li class="g g--tall"><button type="button" data-full="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1500932334442-8761ee4810a7?auto=format&fit=crop&w=600&q=70" alt="Vista aérea del campo con búnkeres" data-i18n-attr="alt:alt_aerial" loading="lazy" width="600" height="800"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=600&q=70" alt="Bola junto al hoyo" data-i18n-attr="alt:alt_ball" loading="lazy" width="600" height="450"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=70" alt="Salida desde el tee" data-i18n-attr="alt:alt_tee" loading="lazy" width="600" height="450"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1530028828-25e8270793c5?auto=format&fit=crop&w=600&q=70" alt="Palos de golf en la bolsa" data-i18n-attr="alt:alt_clubs" loading="lazy" width="600" height="450"></button></li>
+      <li class="g g--wide"><button type="button" data-full="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=900&q=70" alt="Campo de golf bajo un cielo dramático" data-i18n-attr="alt:alt_links" loading="lazy" width="900" height="450"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1593111774240-d529f12cf4bb?auto=format&fit=crop&w=600&q=70" alt="Hierro junto a la bola" data-i18n-attr="alt:alt_iron" loading="lazy" width="600" height="450"></button></li>
+      <li class="g g--wide"><button type="button" data-full="https://images.unsplash.com/photo-1602991174407-a015b35a7b00?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1602991174407-a015b35a7b00?auto=format&fit=crop&w=900&q=70" alt="Buggies de golf en el campo" data-i18n-attr="alt:alt_buggy" loading="lazy" width="900" height="450"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1611374243147-44a702c2d44c?auto=format&fit=crop&w=600&q=70" alt="Golfista practicando un golpe" data-i18n-attr="alt:alt_range" loading="lazy" width="600" height="450"></button></li>
+      <li class="g"><button type="button" data-full="https://images.unsplash.com/photo-1535132011086-b8818f016104?auto=format&fit=crop&w=1600&q=80"><img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?auto=format&fit=crop&w=600&q=70" alt="Golfista en pleno swing" data-i18n-attr="alt:alt_swing" loading="lazy" width="600" height="450"></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ Contacto ============ -->
+<section class="section contact" id="contacto" aria-labelledby="contTitle">
+  <div class="container contact__grid">
+    <div class="contact__info reveal">
+      <p class="eyebrow" data-i18n="contact_eyebrow">Contacto</p>
+      <h2 id="contTitle" data-i18n="contact_title">Estaremos encantados de atenderle</h2>
+      <ul class="contact__list">
+        <li><span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+          <div><h3 data-i18n="addr_label">Dirección</h3><address>Calle Severiano Ballesteros, Urb. Riviera del Sol<br>29649 Mijas, Málaga</address></div></li>
+        <li><span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+          <div><h3 data-i18n="phone_label">Teléfono</h3><p><a href="tel:+34952931960">+34 952 931 960</a><br><a href="tel:+34952936716">+34 952 936 716</a></p></div></li>
+        <li><span class="ico ico--sm"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+          <div><h3 data-i18n="open_label">Apertura</h3><p data-i18n="open_text">Abierto los 365 días del año, según condiciones meteorológicas.</p></div></li>
+      </ul>
+      <form class="contact__form" id="contactForm" novalidate>
+        <h3 data-i18n="form_title">Envíenos un mensaje</h3>
+        <div class="field"><label for="cName" data-i18n="f_name">Nombre</label><input type="text" id="cName" autocomplete="name" required></div>
+        <div class="field"><label for="cEmail" data-i18n="f_email">Correo electrónico</label><input type="email" id="cEmail" autocomplete="email" required></div>
+        <div class="field"><label for="cMsg" data-i18n="f_msg">Mensaje</label><textarea id="cMsg" rows="4" required></textarea></div>
+        <button class="btn btn--primary btn--lg" type="submit"><span data-i18n="f_send">Enviar mensaje</span><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></button>
+        <p class="form-ok" id="contactOk" role="status" hidden data-i18n="f_ok">¡Gracias! Esto es una demostración: su mensaje no se ha enviado.</p>
+      </form>
+    </div>
+    <div class="contact__map reveal">
+      <iframe title="Mapa de Miraflores Golf en Mijas" data-i18n-attr="title:map_title" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Miraflores+Golf+Club+Mijas&amp;output=embed"></iframe>
+      <a class="btn btn--outline btn--block" href="https://www.google.com/maps/search/?api=1&amp;query=Miraflores+Golf+Club+Mijas" target="_blank" rel="noopener"><span data-i18n="map_open">Abrir en Google Maps</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Pie ============ -->
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="brand brand--light" href="#inicio" aria-label="Miraflores Golf Club, inicio" data-i18n-attr="aria-label:brand_aria">
+        <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M17 36V11l15 6-15 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+          <circle cx="29" cy="35" r="2.4" fill="currentColor"/>
+        </svg>
+        <span class="brand__text"><span class="brand__name">Miraflores</span><span class="brand__sub">Golf Club · Mijas</span></span>
+      </a>
+      <p data-i18n="foot_tag">El club de golf más social de la Costa del Sol.</p>
+      <!-- Redes y web: en horizontal y alineadas -->
+      <div class="social">
+        <a class="social__link" href="https://www.instagram.com/mirafloresgolfofficial/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg><span>Instagram</span></a>
+        <a class="social__link" href="https://www.mirafloresgolf.es/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span data-i18n="web_official">Web oficial</span></a>
+      </div>
+    </div>
+    <nav aria-label="Enlaces del pie" data-i18n-attr="aria-label:foot_nav">
+      <h3 data-i18n="foot_explore">Explorar</h3>
+      <ul>
+        <li><a href="#campo" data-i18n="nav_course">El campo</a></li>
+        <li><a href="#servicios" data-i18n="nav_services">Servicios</a></li>
+        <li><a href="#academia" data-i18n="nav_academy">Academia</a></li>
+        <li><a href="#reservas" data-i18n="btn_book_course">Reservar campo</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h3 data-i18n="foot_visit">Visítenos</h3>
+      <address>Calle Severiano Ballesteros<br>Urb. Riviera del Sol<br>29649 Mijas, Málaga</address>
+      <p><a href="tel:+34952931960">+34 952 931 960</a></p>
+    </div>
+    <form class="newsletter" id="newsForm" novalidate>
+      <h3 data-i18n="news_h">Novedades</h3>
+      <p data-i18n="news_p">Reciba nuestro calendario de eventos por correo.</p>
+      <label class="sr-only" for="nEmail" data-i18n="f_email">Correo electrónico</label>
+      <div class="newsletter__row">
+        <input type="email" id="nEmail" placeholder="su@correo.com" data-i18n-attr="placeholder:news_ph" autocomplete="email" required>
+        <button type="submit" class="btn btn--gold" data-i18n="news_btn">Suscribirme</button>
+      </div>
+      <p class="form-ok form-ok--light" id="newsOk" role="status" hidden data-i18n="news_ok">¡Gracias! (Demostración: no se ha enviado nada.)</p>
+    </form>
+  </div>
+  <div class="footer__legal">
+    <div class="container">
+      <p data-i18n="legal">Maqueta de demostración creada como propuesta de diseño. No es la web oficial de Miraflores Golf. Fotografías de colaboradores de Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Botones flotantes (móvil) -->
+<div class="fab" id="fab">
+  <a class="btn btn--gold" href="#reservas"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span data-i18n="btn_book">Reservar</span></a>
+  <a class="btn btn--primary" href="tel:+34952931960"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span data-i18n="btn_call">Llamar</span></a>
+</div>
+
+<!-- Visor de imágenes -->
+<dialog class="lightbox" id="lightbox" aria-label="Visor de imagen" data-i18n-attr="aria-label:lb_aria">
+  <button type="button" class="lightbox__close round" id="lbClose"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg><span class="sr-only" data-i18n="lb_close">Cerrar</span></button>
+  <button type="button" class="lightbox__nav lightbox__nav--prev round" id="lbPrev"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg><span class="sr-only" data-i18n="lb_prev">Anterior</span></button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lightbox__nav lightbox__nav--next round" id="lbNext"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg><span class="sr-only" data-i18n="lb_next">Siguiente</span></button>
+</dialog>
+
+</body>
+</html>
